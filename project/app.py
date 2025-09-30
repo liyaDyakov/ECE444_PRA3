@@ -38,6 +38,8 @@ SQLALCHEMY_DATABASE_URI = url
 app = Flask(__name__)
 # load the config
 app.config.from_object(__name__)
+# Set the correct database URI from environment
+app.config['SQLALCHEMY_DATABASE_URI'] = url
 # init sqlalchemy
 db = SQLAlchemy(app)
 
